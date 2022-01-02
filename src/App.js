@@ -5,11 +5,11 @@ import About from './components/About';
 import Alert from './components/Alert';
 import TextForm from './components/TextForm';
 import React, { useState } from 'react'
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 
 function App() {
@@ -66,21 +66,20 @@ function App() {
   }
   return (
     <>
-      {/* <Router> */}
-        <Navbar  title="Textutils" mode = {mode} toggledarkmode = {toggleDarkMode} toggleredmode = {toggleRedMode} togglebluemode = {toggleBlueMode}/>
+      <Router>
+        <Navbar title="Textutils" mode={mode} toggledarkmode={toggleDarkMode} toggleredmode={toggleRedMode} togglebluemode={toggleBlueMode} />
         <Alert alert={alert} />
-        {/* <Routes> */}
-          {/* <Route path="/about" element={ */}
-          {/* <About mode = {mode} toggledarkmode = {toggleDarkMode} toggleredmode = {toggleRedMode} togglebluemode = {toggleBlueMode}/> */}
-          {/* }> */}
-          {/* </Route> */}
-          {/* <Route path="/" element={ */}
-          <TextForm heading="Enter Your text here" mode={mode} toggledarkmode={toggleDarkMode} toggleredMode={toggleRedMode} showalert={showAlert} />
-          {/* }> */}
-          {/* </Route> */}
-        {/* </Routes> */}
-      {/* <Alert alert={alert} /> */}
-      {/* </Router> */}
+        <Routes>
+          <Route path="/about" element={
+            <About mode={mode} toggledarkmode={toggleDarkMode} toggleredmode={toggleRedMode} togglebluemode={toggleBlueMode} />}>
+          </Route>
+          <Route path="/" element={
+            <TextForm heading="Enter Your text here" mode={mode} toggledarkmode={toggleDarkMode} toggleredMode={toggleRedMode} showalert={showAlert} />
+          }>
+          </Route>
+        </Routes>
+        {/* <Alert alert={alert} /> */}
+      </Router>
     </>
   );
 }
